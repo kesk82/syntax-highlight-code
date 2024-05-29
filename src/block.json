@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/syntax-highlight-code",
+	"version": "0.1.0",
+	"title": "Syntax Highlight Code",
+	"category": "text",
+	"icon": "smiley",
+	"description": "Example block scaffolded with Create Block tool.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "syntax-highlight-code",
+  "attributes": {
+		"content": {
+			"type": "string"
+		},
+    "language": {
+      "type": "string"
+    }
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
