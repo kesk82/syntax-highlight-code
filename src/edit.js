@@ -6,6 +6,7 @@ import { RichText, useBlockProps, InspectorControls } from '@wordpress/block-edi
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { createBlock, getDefaultBlockName } from '@wordpress/blocks';
 import { addFilter } from '@wordpress/hooks';
+import { cloneElement } from 'react';
 
 import './editor.scss';
 
@@ -16,8 +17,10 @@ function wrapCoverBlockInContainer( element, blockType, attributes ) {
   }
 
   if (blockType.name === "create-block/syntax-highlight-code" && attributes.language) {
-    element.props = { ...element.props,
-      className: element.props.className + " language-" + attributes.language }
+    return cloneElement(
+      element,
+      { ...element.props, className: element.props.className + " language-" + attributes.language }
+    );
   }
 
   return element;
